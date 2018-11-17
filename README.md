@@ -1,8 +1,8 @@
-<img align="left" width="400" height="400" src="/images/antlitz.ninja.svg"><br />
+![ANTLITZ.NINJA Logo](/images/antlitz.ninja.svg)
 
 Lorem ipsum
 
-<img align="left" width="400" height="400" src="/demos/001-original.jpg"><br />
+<img align="left" width="400" height="400" src="/demos/001-original.jpg">
 
 ### face detection
 
