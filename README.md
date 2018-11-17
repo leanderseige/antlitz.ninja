@@ -2,7 +2,7 @@
 
 Lorem ipsum
 
-<img align="left" width="400" height="400" src="/demos/001-original.jpg">
+<img align="left" width="400" height="400" src="/demos/001-original.jpg" style="clear:both;">
 
 ### face detection
 
