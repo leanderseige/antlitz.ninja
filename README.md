@@ -2,7 +2,7 @@
 
 Lorem ipsum
 
-![Demo 1](/demos/001-original.jpg | width=100)
+![Demo 1](/demos/001-original.jpg)
 
 ### face detection
 
