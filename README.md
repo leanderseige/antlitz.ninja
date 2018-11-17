@@ -2,6 +2,8 @@
 
 Lorem ipsum
 
+![Demo 1](/demos/001-original.jpg | width=100)
+
 ### face detection
 
 folder face_detection/ basic python3 scripts to find faces in IIIF collection files (contains haarcascacdes files from OpenCV)
