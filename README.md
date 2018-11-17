@@ -1,8 +1,8 @@
 ![ANTLITZ.NINJA Logo](/images/antlitz.ninja.svg)
 
-Lorem ipsum
-
 <img align="left" width="400" height="400" src="/demos/001-original.jpg" style="clear:both;">
+
+ANTLITZ.NINJA is a project, developed during the Coding da Vinci Hackathon Rhein-Main 2018. ANTLITZ.NINJA is a web-based Application to create new pieces of art from existing paintings and drawings. ANTLITZ.NINJA is compatible with the International Image Interoperability Framework.
 
 ### face detection
 
