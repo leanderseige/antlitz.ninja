@@ -1,0 +1,187 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://iiif.manducus.net/annotations/antlitzninja_faces_nga.json",
+  "@type": "sc:AnnotationList",
+  "resources": [
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://media.nga.gov/public/manifests/canvas/106382.json#xywh=1925,2175,4600,4600",
+        "within": {
+          "@id": "https://media.nga.gov/public/manifests/nga_highlights.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://media.nga.gov/public/manifests/canvas/46626.json#xywh=4875,1475,2750,2750",
+        "within": {
+          "@id": "https://media.nga.gov/public/manifests/nga_highlights.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://media.nga.gov/public/manifests/canvas/46159.json#xywh=1225,900,625,625",
+        "within": {
+          "@id": "https://media.nga.gov/public/manifests/nga_highlights.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://media.nga.gov/public/manifests/canvas/1231.json#xywh=6350,7025,1975,1975",
+        "within": {
+          "@id": "https://media.nga.gov/public/manifests/nga_highlights.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://media.nga.gov/public/manifests/canvas/37003.json#xywh=3750,4375,4025,4025",
+        "within": {
+          "@id": "https://media.nga.gov/public/manifests/nga_highlights.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://media.nga.gov/public/manifests/canvas/79.json#xywh=4675,3025,3625,3625",
+        "within": {
+          "@id": "https://media.nga.gov/public/manifests/nga_highlights.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://media.nga.gov/public/manifests/canvas/46114.json#xywh=6700,3300,2250,2250",
+        "within": {
+          "@id": "https://media.nga.gov/public/manifests/nga_highlights.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://media.nga.gov/public/manifests/canvas/46114.json#xywh=8625,11325,1225,1225",
+        "within": {
+          "@id": "https://media.nga.gov/public/manifests/nga_highlights.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://media.nga.gov/public/manifests/canvas/12198.json#xywh=3675,1475,1425,1425",
+        "within": {
+          "@id": "https://media.nga.gov/public/manifests/nga_highlights.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://media.nga.gov/public/manifests/canvas/398.json#xywh=2450,3025,2825,2825",
+        "within": {
+          "@id": "https://media.nga.gov/public/manifests/nga_highlights.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    }
+  ]
+}

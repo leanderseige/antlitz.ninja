@@ -1,0 +1,88 @@
+/*
+
+  ANTLITZ.NINJA
+
+  (c) 2018, Leander Seige, leander@seige.name
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+*/
+
+@media (max-aspect-ratio: 15/17) {
+
+  #gridwrap {
+    display: grid;
+    grid-template-columns: 80vw 20vw;
+    grid-template-rows: 40vw 16vw 24vw 1fr 1fr 1fr;
+    /* height: 100vh; */
+    height: calc(var(--vh, 1vh) * 100);
+    top:0px;
+    border:0px;
+  }
+
+  #osd-eyes {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #osd-nose {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #osd-mouth {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #bottom {
+    flex-wrap: wrap;
+    font-size:8vw;
+    grid-column: 2;
+    grid-row: 1 / span 6;
+    border-left: 1px solid #ccc;
+  }
+
+  .ctrl {
+    grid-column: 1 / span 1;
+  }
+
+  .ctrl-icon {
+    height:8vw;
+  }
+
+  .icons {
+    font-size:8vw;
+  }
+
+  .splash_content {
+    text-align: center;
+    grid-area: a;
+    align-self: center;
+    justify-self: center;
+    z-index: 9999;
+    font-size: 4vw;
+  }
+
+  .linkon {
+    height:8vw;
+    margin:2vw;
+    padding:2vw;
+  }
+
+  .meta {
+    font-size: 2vw;
+  }
+
+}

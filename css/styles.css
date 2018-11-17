@@ -1,0 +1,152 @@
+/*
+
+  ANTLITZ.NINJA
+
+  (c) 2018, Leander Seige, leander@seige.name
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+*/
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+#gridwrap {
+  display: grid;
+  grid-template-columns: 80vh 1fr;
+  grid-template-rows: 40vh 16vh 24vh 1fr;
+  /* border:1px solid #ccc; */
+  /* height: 100vh; */
+  height: calc(var(--vh, 1vh) * 100);
+  /*
+  top: calc((100vh - 49vw)*0.333);
+  position: absolute;
+  width:100vw;
+  left:0px;
+  */
+}
+
+.grid-item {
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.icons {
+  color: #808080;
+  font-size: 4vw;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.mainmenu {
+  padding:1vw;
+  margin:2vw;
+  color:#444;
+}
+
+.meta {
+  padding:0px;
+  margib:0px;
+}
+
+strong {
+  color:#222;
+}
+
+#osd-eyes {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#osd-nose {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#osd-mouth {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#bottom {
+  color:#808080;
+  font-size:4vw;
+  padding:0vw;
+  grid-column: 1 / span 2;
+}
+
+.ctrl {
+  border-bottom:1px solid #ccc;
+}
+
+.ctrl-icon {
+  height:6vw;
+}
+
+#download_button {
+  text-decoration: none;
+  color:#444;
+}
+
+#splash {
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-areas: "a";
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.splash_content {
+  text-align: center;
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+  z-index: 9999;
+  font-size: 3vh;
+}
+
+.splash_content hr {
+  width:50%;
+  color:#ccc;
+}
+
+.linkon {
+  height:5vh;
+  margin:1vw;
+  padding:1vw;
+}
+
+.noselect {
+  touch-action: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#eesettings {
+  display:none;
+}

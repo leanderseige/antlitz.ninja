@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+  ANTLITZ.NINJA
+
+  (c) 2018, Leander Seige, leander@seige.name
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+-->
+
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" type="image/png" href="/images/logo16.png">
+  <title>ANTLITZ.NINJA</title>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/styles.css' />
+  <link rel='stylesheet' type='text/css' media='screen' href='css/styles-mobile.css' />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js" integrity="sha384-CchuzHs077vGtfhGYl9Qtc7Vx64rXBXdIAZIPbItbNyWIRTdG0oYAqki3Ry13Yzu" crossorigin="anonymous"></script>
+  <script src="openseadragon/openseadragon.min.js"></script>
+  <script src="antlitzninja.js"></script>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    var config = {
+      "faces": false,
+      "e": "osd-eyes",
+      "n": "osd-nose",
+      "m": "osd-mouth"
+    };
+    var av = new antlitzninja(config);
+
+    av.recalcVH();
+
+    window.addEventListener('resize', function(event){
+      av.recalcVH();
+    });
+
+    $('.gridwrap').bind('touchend', function(e) {
+      e.preventDefault();
+      $(this).click();
+    })
+
+    $('.noselect').bind('touchend', function(e) {
+      e.preventDefault();
+      $(this).click();
+    })
+  </script>
+
+  <div id="gridwrap">
+
+    <!-- NEW ROW -->
+
+    <div class="grid-item noselect" id="osd-eyes"></div>
+
+    <div class="grid-item ctrl noselect" id="eyes-ctrl">
+      <div class="icons"><img src="images/a-eyes.svg" class="ctrl-icon" /></div>
+      <div class="icons" onclick="av.reloadOSD('e')">&#xf2f1;</div>
+      <div class="icons" onclick="av.flipOSD('e')">&#xf362;</div>
+      <div class="icons" onclick="av.zoomIn('e')">&#xf00e;</div>
+      <div class="icons" onclick="av.zoomOut('e')">&#xf010;</div>
+    </div>
+
+
+    <!-- NEW ROW -->
+
+    <div class="grid-item noselect" id="osd-nose"></div>
+
+    <div class="grid-item ctrl noselect" id="nose-ctrl">
+      <div class="icons"><img src="images/a-nose.svg" class="ctrl-icon" /></div>
+      <div class="icons" onclick="av.reloadOSD('n')">&#xf2f1;</div>
+      <div class="icons" onclick="av.flipOSD('n')">&#xf362;</div>
+      <div class="icons" onclick="av.zoomIn('n')">&#xf00e;</div>
+      <div class="icons" onclick="av.zoomOut('n')">&#xf010;</div>
+    </div>
+
+
+    <!-- NEW ROW -->
+
+    <div class="grid-item noselect" id="osd-mouth"></div>
+
+    <div class="grid-item ctrl noselect" id="mouth-ctrl">
+      <div class="icons"><img src="images/a-mouth.svg" class="ctrl-icon" /></div>
+      <div class="icons" onclick="av.reloadOSD('m')">&#xf2f1;</div>
+      <div class="icons" onclick="av.flipOSD('m')">&#xf362;</div>
+      <div class="icons" onclick="av.zoomIn('m')">&#xf00e;</div>
+      <div class="icons" onclick="av.zoomOut('m')">&#xf010;</div>
+    </div>
+
+    <!-- MAIN MENU -->
+
+    <div class="grid-item noselect" id="bottom">
+      <div class="icons mainmenu" id="eesettings" onclick="av.buildSettings();">&#xf013;</div>
+      <div class="icons mainmenu" onclick="av.reloadAll();">&#xf2f1;</div>
+      <div class="icons mainmenu" onclick="av.zoomInAll();">&#xf00e;</div>
+      <div class="icons mainmenu" onclick="av.zoomOutAll();">&#xf010;</div>
+      <div class="icons mainmenu" onclick="av.resetAll();">&#xf049;</div>
+      <div class="icons mainmenu" onclick="$('#splash').show();$('#download').show();">&#xf56d;</div>
+      <div class="icons mainmenu" onclick="$('#splash').show();$('#metadata').show();">&#xf05a;</div>
+      <div class="icons mainmenu" onclick="$('#splash').show();$('#impressum').show();"><img src="images/antlitz.ninja.icon.svg" /></div>
+    </div>
+
+    <!-- Splash -->
+
+    <div id="splash">
+
+      <div id="loader" class="splash_content">
+        <img src="images/antlitz.ninja.svg" /><br />
+        <br />
+        <img src="images/ajax.gif" /><br /><br />
+        <span id="loader_msg" </span>
+      </div>
+
+      <div id="metadata" class="splash_content" style="display:none"></div>
+
+      <div id="settings" class="splash_content" style="display:none">
+      </div>
+
+      <div id="impressum" class="splash_content" style="display:none">
+        slice and stitch historic artworks<br />
+        <br />
+        <br />
+        <img src="images/antlitz.ninja.svg" onclick="av.ee();" /><br />
+        <br />
+        <br /> Leander Seige, 2018<br />
+        <br /> leander@seige.name
+        <br />
+        <br />
+        <span class="icons" style="color:black;" onclick="$('#splash').hide();$('#impressum').hide();">&#xf057;</span>
+      </div>
+
+      <div id="download" class="splash_content" style="display:none">
+        <a onclick="av.downloadImage();" id="download_button">
+          <span class="mainmenu icons">&#xf03e;</span><br />
+          Download Image
+        </a>
+        <br />
+        <br />
+        <hr />
+        <br />
+        <a onclick="av.downloadPDF();" id="download_button">
+          <span class="mainmenu icons">&#xf1c1;</span><br />
+          Download PDF
+        </a>
+        <br />
+        <br />
+        <br />
+        <hr />
+        <br />
+        <br />
+        <span class="icons" style="color:black;" onclick="$('#splash').hide();$('#download').hide();">&#xf057;</span>
+      </div>
+
+    </div>
+
+</body>
