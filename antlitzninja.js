@@ -294,9 +294,9 @@ function antlitzninja(config) {
     html = html + "<strong>" + md['c'] + "</strong><br />" + md['t'] + '<br />';
     html = html + '<nobr>';
     html = html + '<a href="' + md['s'] + '" target="_blank" ><img class="linkon" src="' + faces[fid]['logo'] + '" /></a>'
-    html = html + '<a href="' + md['i'] + '" target="_blank" ><img class="linkon" src="iiif.svg" /></a>'
+    html = html + '<a href="' + md['i'] + '" target="_blank" ><img class="linkon" src="images/iiif.svg" /></a>'
     if (md['p']) {
-      html = html + '<a href="' + md['p'] + '" target="_blank" ><img class="linkon" src="manducus.png" /></a>'
+      html = html + '<a href="' + md['p'] + '" target="_blank" ><img class="linkon" src="images/manducus.png" /></a>'
     }
     html = html + '</nobr>';
     html = html + '<br /><br />';
@@ -650,7 +650,8 @@ function antlitzninja(config) {
 
   antlitzninja.prototype.ee = function() {
     eecnt = eecnt +1;
-    if(eecnt>=3) {
+    if(eecnt==3) {
+      $('#bottom').prepend('<div class="icons mainmenu" id="eesettings" onclick="av.buildSettings();">&#xf013;</div>');
       $('#eesettings').css("display", "block");
     }
   }
