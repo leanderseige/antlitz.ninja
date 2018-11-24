@@ -1,4 +1,4 @@
-![ANTLITZ.NINJA Logo](/images/antlitz.ninja.svg)
+![ANTLITZ.NINJA Logo](/demos/antlitz.ninja.png)
 
 ![ANTLITZ.NINJA Demo](/demos/001-small.jpg)
 
