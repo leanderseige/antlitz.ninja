@@ -13,7 +13,6 @@ ANTLITZ.NINJA is a project, developed during the Coding da Vinci Hackathon Rhein
 ### Data
 
 * Städel Musem
-* (Pssst! MET and NGA)
 
 ### Face Detection
 
