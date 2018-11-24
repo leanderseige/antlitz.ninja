@@ -13,7 +13,7 @@ ANTLITZ.NINJA was developed for the [Coding da Vinci Hackathon Rhein-Main 2018](
 ### Data
 
 * Städel Musem: https://codingdavinci.de/daten/
-* (Sshhht! Suprise!)
+* (Sshhht! Surprise!)
 
 ### Face Detection
 
