@@ -25,7 +25,7 @@
   <meta charset='utf-8'>
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="mobile-web-app-capable" content="yes">
-  <link rel="shortcut icon" type="image/png" href="/images/logo16.png">
+  <link rel="shortcut icon" type="image/svg+xml" href="images/antlitz.ninja.icon.svg" sizes="any">
   <title>ANTLITZ.NINJA</title>
   <link rel='stylesheet' type='text/css' media='screen' href='css/styles.css' />
   <link rel='stylesheet' type='text/css' media='screen' href='css/styles-mobile.css' />
@@ -113,9 +113,9 @@
       <div class="icons mainmenu" onclick="av.zoomInAll();">&#xf00e;</div>
       <div class="icons mainmenu" onclick="av.zoomOutAll();">&#xf010;</div>
       <div class="icons mainmenu" onclick="av.resetAll();">&#xf049;</div>
-      <div class="icons mainmenu" onclick="$('#splash').show();$('#download').show();">&#xf56d;</div>
-      <div class="icons mainmenu" onclick="$('#splash').show();$('#metadata').show();">&#xf05a;</div>
-      <div class="icons mainmenu" onclick="$('#splash').show();$('#impressum').show();"><img src="images/antlitz.ninja.icon.svg" /></div>
+      <div class="icons mainmenu" onclick="av.show('#splash');av.show('#download');">&#xf56d;</div>
+      <div class="icons mainmenu" onclick="av.show('#splash');av.show('#metadata');">&#xf05a;</div>
+      <div class="icons mainmenu" onclick="av.show('#splash');av.show('#impressum');"><img src="images/antlitz.ninja.icon.svg" /></div>
     </div>
 
     <!-- Splash -->
@@ -144,7 +144,7 @@
         <br /> leander@seige.name
         <br />
         <br />
-        <span class="icons" style="color:black;" onclick="$('#splash').hide();$('#impressum').hide();">&#xf057;</span>
+        <span class="icons" style="color:black;" onclick="av.hide('#splash');av.hide('#impressum');">&#xf057;</span>
       </div>
 
       <div id="download" class="splash_content" style="display:none">
@@ -166,7 +166,7 @@
         <hr />
         <br />
         <br />
-        <!-- not used yet a onclick="av.downloadManifest();" id="download_button">
+        <!--a onclick="av.downloadManifest();" id="download_button">
           <span class="mainmenu icons">&#xf1c1;</span><br />
           Download Manifest
         </a>

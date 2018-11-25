@@ -154,7 +154,7 @@ function antlitzninja(config) {
     }
     $('#loader_msg').html("");
     console.log("boarding completed");
-    $("#splash").hide();
+    av.hide('#splash');
     init_display();
   }
 
@@ -316,7 +316,7 @@ function antlitzninja(config) {
   function build_metadata() {
     var html = "<div>";
     html = html + combine_metadata();
-    html = html + '<span class="icons" style="color:black;" onclick="$(\'#splash\').hide();$(\'#metadata\').hide();">&#xf057;</span>';
+    html = html + '<span class="icons" style="color:black;" onclick="av.hide(\'#splash\');av.hide(\'#metadata\');">&#xf057;</span>';
     html = html + "</div>";
     $('#metadata').html(html);
   }
@@ -438,8 +438,8 @@ function antlitzninja(config) {
       link.click();
     }
 
-    $("#loader").hide();
-    $("#splash").hide();
+    av.hide("#loader");
+    av.hide("#splash");
     console.log("finished image");
   }
 
@@ -538,8 +538,8 @@ function antlitzninja(config) {
 
     if(download_mode=="manifest") {
       var m = JSONC.pack(create_dynafest(w,eimgurl,nimgurl,mimgurl));
-      m = m.replace("/", "%2F");
-      m = m.replace("+", "%2B");
+      m = m.replace(/\//g, "%2F");
+      m = m.replace(/\+/g, "%2B");
       console.log(m);
       return;
     }
@@ -592,12 +592,26 @@ function antlitzninja(config) {
     c[0]['width'] = w;
     var i = [];
     i[0] = {};
+    i[0]['on'] = c[0]['@id'];
     i[0]['@type'] = "oa:Annotation";
     i[0]['motivation'] = "sc:painting";
     i[0]['resource'] = {};
+    i[0]['resource']['@type'] = "dctypes:Image";
+    i[0]['resource']['format'] = "image/jpeg";
+    i[0]['resource']['height'] = w;
+    i[0]['resource']['width'] = w;
     i[0]['resource']['service'] = {};
+    i[0]['resource']['service']['profile'] = "http://iiif.io/api/image/2/level1.json";
+    i[0]['resource']['service']['@context'] = "http://iiif.io/api/image/2/context.json";
+    i[0]['resource']['selector']= {};
+    i[0]['resource']['selector']['@context'] = "http://iiif.io/api/annex/openannotation/context.json";
+    i[0]['resource']['selector']['@type'] = "iiif:ImageApiSelector";
+    i[0]['resource']['selector']['region'] = "0,0,1000,1000";
     i[1] = i[0];
     i[2] = i[0];
+    i[0]['resource']['service']['@id'] = osde.id;
+    i[0]['resource']['service']['@id'] = osdn.id;
+    i[0]['resource']['service']['@id'] = osdm.id;
     c[0]['images'] = i;
     s[0]['canvases'] = c;
     m['sequences'] = s;
@@ -678,8 +692,8 @@ function antlitzninja(config) {
   }
 
   antlitzninja.prototype.hideSettings = function() {
-    $('#splash').hide();
-    $('#settings').hide();
+    av.hide('#splash');
+    av.hide('#settings');
   }
 
   antlitzninja.prototype.buildSettings = function() {
@@ -701,8 +715,8 @@ function antlitzninja(config) {
     html = html + "<span class=\"icons\" style=\"color:black;\" onclick=\"av.hideSettings();\">&#xf057;</span>";
 
     $('#settings').html(html);
-    $('#splash').show();
-    $('#settings').show();
+    av.show('#splash');
+    av.show('#settings');
   }
 
   antlitzninja.prototype.ee = function() {
@@ -712,5 +726,18 @@ function antlitzninja(config) {
       $('#eesettings').css("display", "block");
     }
   }
+
+  antlitzninja.prototype.show = function(id) {
+    $(id).fadeIn(500,function() {
+      $(id).show();
+    });
+  }
+
+  antlitzninja.prototype.hide = function(id) {
+    $(id).fadeOut(500,function() {
+      $(id).hide();
+    });
+  }
+
 
 }
