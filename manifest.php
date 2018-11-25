@@ -1,5 +1,8 @@
 <?php
-	function decode_gzip( $data )
+
+/* not used yet */
+
+		function decode_gzip( $data )
     {
         return gzinflate( substr( $data, 10, -8 ) );
     }
@@ -12,7 +15,7 @@
             $json = json_decode( $data );
         }
         header('Content-Type: application/json');
-        die($json); 
+        die($json);
     }
 	die();
 ?>

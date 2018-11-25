@@ -498,6 +498,13 @@ function antlitzninja(config) {
     this.create_image();
   }
 
+  antlitzninja.prototype.downloadManifest = function() {
+    download_mode="manifest";
+    $("#download").hide();
+    $("#loader").show();
+    this.create_image();
+  }
+
   antlitzninja.prototype.create_image = function() {
     var deleteme = document.getElementById('deleteme');
     if (deleteme) {
@@ -529,6 +536,14 @@ function antlitzninja(config) {
     var nimgurl = get_permalink(vnrect, vnflip, vnimag, w);
     var mimgurl = get_permalink(vmrect, vmflip, vmimag, w);
 
+    if(download_mode=="manifest") {
+      var m = JSONC.pack(create_dynafest(w,eimgurl,nimgurl,mimgurl));
+      m = m.replace("/", "%2F");
+      m = m.replace("+", "%2B");
+      console.log(m);
+      return;
+    }
+
     var imge = document.createElement('img');
     var imgn = document.createElement('img');
     var imgm = document.createElement('img');
@@ -545,6 +560,48 @@ function antlitzninja(config) {
       imgn.src = nimgurl;
     }
     imge.src = eimgurl;
+  }
+
+  function create_UUID(){
+      var dt = new Date().getTime();
+      var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          var r = (dt + Math.random()*16)%16 | 0;
+          dt = Math.floor(dt/16);
+          return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+      });
+      return uuid;
+  }
+
+  // not used yet
+  function create_dynafest(w,pe,pn,pm) {
+    var id = create_UUID();
+    var m = {};
+    m['@context'] = "http://iiif.io/api/presentation/2/context.json";
+    m['@type'] = "sc:Manifest";
+    m['@id'] = 'https://antlitz.ninja/uuid/'+id;
+    var s = [];
+    s[0] = {};
+    s[0]['@type'] = "sc:Sequence";
+    s[0]['@id'] = m['@id']+'/s/0';
+    var c = [];
+    c[0] = {}
+    c[0]['@id'] = m['@id']+'/c/0';
+    c[0]['@type'] = "sc:Canvas";
+    c[0]['format'] = "image/jpeg";
+    c[0]['height'] = w;
+    c[0]['width'] = w;
+    var i = [];
+    i[0] = {};
+    i[0]['@type'] = "oa:Annotation";
+    i[0]['motivation'] = "sc:painting";
+    i[0]['resource'] = {};
+    i[0]['resource']['service'] = {};
+    i[1] = i[0];
+    i[2] = i[0];
+    c[0]['images'] = i;
+    s[0]['canvases'] = c;
+    m['sequences'] = s;
+    return m;
   }
 
   function detectmob() {
