@@ -4,6 +4,9 @@
 
   (c) 2018, Leander Seige, leander@seige.name
 
+  https://antlitz.ninja
+	https://github.com/leanderseige/antlitz.ninja
+
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -484,6 +487,13 @@ function antlitzninja(config) {
 
   }
 
+  antlitzninja.prototype.launch_download_dialog = function () {
+    av.show('#splash');
+    av.show('#download');
+    download_mode="manifest";
+    this.create_image();
+  }
+
   antlitzninja.prototype.downloadImage = function() {
     download_mode="image";
     $("#download").hide();
@@ -493,13 +503,6 @@ function antlitzninja(config) {
 
   antlitzninja.prototype.downloadPDF = function() {
     download_mode="pdf";
-    $("#download").hide();
-    $("#loader").show();
-    this.create_image();
-  }
-
-  antlitzninja.prototype.downloadManifest = function() {
-    download_mode="manifest";
     $("#download").hide();
     $("#loader").show();
     this.create_image();
@@ -540,7 +543,7 @@ function antlitzninja(config) {
       var m = JSONC.pack(create_dynafest(w,eimgurl,nimgurl,mimgurl));
       m = m.replace(/\//g, "%2F");
       m = m.replace(/\+/g, "%2B");
-      console.log(m);
+      $('#button_dynamic_manifest').attr("href", "https://antlitz.ninja./manifest.php?m="+m)
       return;
     }
 
@@ -564,7 +567,7 @@ function antlitzninja(config) {
 
   function create_UUID(){
       var dt = new Date().getTime();
-      var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var uuid = 'xxxxxxxx'.replace(/[xy]/g, function(c) {
           var r = (dt + Math.random()*16)%16 | 0;
           dt = Math.floor(dt/16);
           return (c=='x' ? r :(r&0x3|0x8)).toString(16);
@@ -578,6 +581,7 @@ function antlitzninja(config) {
     var m = {};
     m['@context'] = "http://iiif.io/api/presentation/2/context.json";
     m['@type'] = "sc:Manifest";
+    m['label'] = "anm";
     m['@id'] = 'https://antlitz.ninja/uuid/'+id;
     var s = [];
     s[0] = {};
@@ -587,34 +591,37 @@ function antlitzninja(config) {
     c[0] = {}
     c[0]['@id'] = m['@id']+'/c/0';
     c[0]['@type'] = "sc:Canvas";
-    c[0]['format'] = "image/jpeg";
+    c[0]['label'] = "anc";
     c[0]['height'] = w;
     c[0]['width'] = w;
+    c[0]['thumbnail'] = {};
+    c[0]['thumbnail']['@id'] = osde.id+"/0,0,300,300/full/0/default.jpg";
     var i = [];
     i[0] = {};
-    i[0]['on'] = c[0]['@id'];
+    i[0]['@id'] = m['@id']+'/i/0';
+    i[0]['on'] = c[0]['@id']+"#xywh=0,0,100,50";
     i[0]['@type'] = "oa:Annotation";
+    i[0]["@context"] = "http://iiif.io/api/presentation/2/context.json";
     i[0]['motivation'] = "sc:painting";
     i[0]['resource'] = {};
-    i[0]['resource']['@type'] = "dctypes:Image";
-    i[0]['resource']['format'] = "image/jpeg";
-    i[0]['resource']['height'] = w;
-    i[0]['resource']['width'] = w;
-    i[0]['resource']['service'] = {};
-    i[0]['resource']['service']['profile'] = "http://iiif.io/api/image/2/level1.json";
-    i[0]['resource']['service']['@context'] = "http://iiif.io/api/image/2/context.json";
-    i[0]['resource']['selector']= {};
-    i[0]['resource']['selector']['@context'] = "http://iiif.io/api/annex/openannotation/context.json";
-    i[0]['resource']['selector']['@type'] = "iiif:ImageApiSelector";
-    i[0]['resource']['selector']['region'] = "0,0,1000,1000";
-    i[1] = i[0];
-    i[2] = i[0];
-    i[0]['resource']['service']['@id'] = osde.id;
-    i[0]['resource']['service']['@id'] = osdn.id;
-    i[0]['resource']['service']['@id'] = osdm.id;
+    i[0]['resource']['@id'] = pe;
+    i[0]['resource']['@type'] =  "dctypes:Image";
+    i[0]['resource']["format"] = "image/jpeg";
+
+    i[1] = JSON.parse(JSON.stringify(i[0]));
+    i[2] = JSON.parse(JSON.stringify(i[0]));
+    i[1]['@id'] = m['@id']+'/i/1';
+    i[2]['@id'] = m['@id']+'/0/2';
+    i[1]['resource']['@id'] = pn;
+    i[2]['resource']['@id'] = pm;
+
+    i[1]['on'] = c[0]['@id']+"#xywh=0,50,100,20";
+    i[2]['on'] = c[0]['@id']+"#xywh=0,70,100,30";
+
     c[0]['images'] = i;
     s[0]['canvases'] = c;
     m['sequences'] = s;
+
     return m;
   }
 

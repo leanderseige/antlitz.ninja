@@ -6,6 +6,9 @@
 
   (c) 2018, Leander Seige, leander@seige.name
 
+  https://antlitz.ninja
+	https://github.com/leanderseige/antlitz.ninja
+
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -113,7 +116,7 @@
       <div class="icons mainmenu" onclick="av.zoomInAll();">&#xf00e;</div>
       <div class="icons mainmenu" onclick="av.zoomOutAll();">&#xf010;</div>
       <div class="icons mainmenu" onclick="av.resetAll();">&#xf049;</div>
-      <div class="icons mainmenu" onclick="av.show('#splash');av.show('#download');">&#xf56d;</div>
+      <div class="icons mainmenu" onclick="av.launch_download_dialog();">&#xf56d;</div>
       <div class="icons mainmenu" onclick="av.show('#splash');av.show('#metadata');">&#xf05a;</div>
       <div class="icons mainmenu" onclick="av.show('#splash');av.show('#impressum');"><img src="images/antlitz.ninja.icon.svg" /></div>
     </div>
@@ -148,7 +151,7 @@
       </div>
 
       <div id="download" class="splash_content" style="display:none">
-        <a onclick="av.downloadImage();" id="download_button">
+        <a onclick="av.downloadImage();" id="button_download_image">
           <span class="mainmenu icons">&#xf03e;</span><br />
           Download Image
         </a>
@@ -156,7 +159,7 @@
         <br />
         <hr />
         <br />
-        <a onclick="av.downloadPDF();" id="download_button">
+        <a onclick="av.downloadPDF();" id="button_download_pdf">
           <span class="mainmenu icons">&#xf1c1;</span><br />
           Download PDF
         </a>
@@ -166,16 +169,16 @@
         <hr />
         <br />
         <br />
-        <!--a onclick="av.downloadManifest();" id="download_button">
-          <span class="mainmenu icons">&#xf1c1;</span><br />
-          Download Manifest
+        <a id="button_dynamic_manifest" class="splash_content"  target="_blank">
+          <span class="mainmenu icons"><img class="linkon" src="images/iiif.svg" /></span><br />
+          Link Manifest
         </a>
         <br />
         <br />
         <br />
         <hr />
         <br />
-        <br /-->
+        <br />
         <span class="icons" style="color:black;" onclick="$('#splash').hide();$('#download').hide();">&#xf057;</span>
       </div>
 
