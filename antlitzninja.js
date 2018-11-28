@@ -73,6 +73,8 @@ function antlitzninja(config) {
 
   var eecnt = 0;
 
+  var jcache = {};
+
   $(document).ready(function() {
     console.log("antlitz.ninja waking up");
 
@@ -104,7 +106,7 @@ function antlitzninja(config) {
     url = "https://iiif.manducus.net/annotations/antlitz_faces_staedel.json";
     uid = b64EncodeUnicode(url);
     collections[uid] = [];
-    collections[uid]['name'] = "Städel Museum, Frankfurt/Main";
+    collections[uid]['name'] = "Städel Museum, Frankfurt am Main";
     collections[uid]['url'] = url;
     collections[uid]['active'] = true;
     collections[uid]['json'] = false;
@@ -113,7 +115,7 @@ function antlitzninja(config) {
     url = "https://iiif.manducus.net/annotations/antlitz_faces_met.json";
     uid = b64EncodeUnicode(url);
     collections[uid] = [];
-    collections[uid]['name'] = "Metropolitan Museum of Art";
+    collections[uid]['name'] = "The Metropolitan Museum of Art, New York";
     collections[uid]['url'] = url;
     collections[uid]['active'] = false;
     collections[uid]['json'] = false;
@@ -122,7 +124,7 @@ function antlitzninja(config) {
     url = "https://iiif.manducus.net/annotations/antlitz_faces_nga.json";
     uid = b64EncodeUnicode(url);
     collections[uid] = [];
-    collections[uid]['name'] = "National Gallery of Art";
+    collections[uid]['name'] = "Courtesy National Gallery of Art, Washington";
     collections[uid]['url'] = url;
     collections[uid]['active'] = false;
     collections[uid]['json'] = false;
@@ -133,6 +135,17 @@ function antlitzninja(config) {
 
     await loadAllData();
 
+  }
+
+  async function get_cached_url(url) {
+    var key = b64EncodeUnicode(url);
+    if(key in jcache) {
+      return jcache[key];
+    }
+    const mresp = await fetch(url);
+    const mresu = await mresp.json();
+    jcache[key] = mresu;
+    return mresu;
   }
 
   async function loadAllData() {
@@ -147,8 +160,7 @@ function antlitzninja(config) {
     $('#loader_msg').html(n);
     for (var c in collections) {
       for (var r in collections[c]['json']["resources"]) {
-        const mresp = await fetch(collections[c]['json']['resources'][r]['on']['within']['@id']);
-        const mresu = await mresp.json();
+        var mresu = await get_cached_url(collections[c]['json']['resources'][r]['on']['within']['@id']);
         var id = b64EncodeUnicode(mresu['@id']);
         console.log(id);
         manifests[id] = mresu;
@@ -215,6 +227,7 @@ function antlitzninja(config) {
           face['h'] = parseInt(temp[3]);
           face['manifest'] = b64EncodeUnicode(resources[r]['on']['within']['@id']);
           face['logo'] = collections[c]['logo'];
+          face['name'] = collections[c]['name'];
           face['collid'] = c;
           faces[fid] = face;
           fid = fid + 1;
@@ -295,6 +308,7 @@ function antlitzninja(config) {
       md['t'] = md['t'].substring(0, 35) + " [...]"
     }
     html = html + "<strong>" + md['c'] + "</strong><br />" + md['t'] + '<br />';
+    html = html + faces[fid]['name'] + "<br />";
     html = html + '<nobr>';
     html = html + '<a href="' + md['s'] + '" target="_blank" ><img class="linkon" src="' + faces[fid]['logo'] + '" /></a>'
     html = html + '<a href="' + md['i'] + '" target="_blank" ><img class="linkon" src="images/iiif.svg" /></a>'
@@ -410,6 +424,7 @@ function antlitzninja(config) {
     }
     // doc.addPage();
     doc.addImage(data, 'JPEG', 30, c, 120, 120);
+    doc.text(30, c, "CC-BY-SA 4.0")
     doc.save("output.pdf");
     $("#loader").hide();
     $("#splash").hide();
@@ -453,6 +468,11 @@ function antlitzninja(config) {
     console.log(imgn.src + " " + imgn.complete);
     console.log(imgm.src + " " + imgm.complete);
 
+    console.log("calculated width " + w);
+    console.log("width e image " + imge.width);
+    console.log("width n image " + imgn.width);
+    console.log("width m image " + imgm.width);
+
     var dcanvas = document.createElement('canvas');
     dcanvas.id = "delme";
     dcanvas.width = w;
@@ -461,11 +481,11 @@ function antlitzninja(config) {
     console.log("canvas ready");
     var dctx = dcanvas.getContext("2d");
     console.log("d e");
-    dctx.drawImage(imge, 0, 0);
+    dctx.drawImage(imge, 0, 0, w, Math.ceil(w * 200 /400));
     console.log("d n");
-    dctx.drawImage(imgn, 0, Math.floor(w * 200 / 400));
+    dctx.drawImage(imgn, 0, Math.floor(w * 200 / 400), w, Math.ceil(w * 80 / 400));
     console.log("d m");
-    dctx.drawImage(imgm, 0, Math.floor(w * 280 / 400));
+    dctx.drawImage(imgm, 0, Math.floor(w * 280 / 400), w, Math.ceil(w * 120 / 400));
 
     var ms = (new Date).getTime();
     var fn = ms.toString() + ".jpg";
@@ -550,11 +570,16 @@ function antlitzninja(config) {
     var imge = document.createElement('img');
     var imgn = document.createElement('img');
     var imgm = document.createElement('img');
+
     imge.crossOrigin = "Anonymous";
     imgn.crossOrigin = "Anonymous";
     imgm.crossOrigin = "Anonymous";
+
+    console.log("loading "+eimgurl);
     imge.onload = function() {
+      console.log("loading "+nimgurl);
       imgn.onload = function() {
+        console.log("loading "+mimgurl);
         imgm.onload = function() {
           create_image_compose(imge, imgn, imgm, w);
         }
