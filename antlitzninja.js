@@ -107,6 +107,7 @@ function antlitzninja(config) {
     uid = b64EncodeUnicode(url);
     collections[uid] = [];
     collections[uid]['name'] = "Städel Museum, Frankfurt am Main";
+    collections[uid]['lic'] = "CC-BY-SA 4.0";
     collections[uid]['url'] = url;
     collections[uid]['active'] = true;
     collections[uid]['json'] = false;
@@ -116,6 +117,7 @@ function antlitzninja(config) {
     uid = b64EncodeUnicode(url);
     collections[uid] = [];
     collections[uid]['name'] = "The Metropolitan Museum of Art, New York";
+    collections[uid]['lic'] = "Public Domain";
     collections[uid]['url'] = url;
     collections[uid]['active'] = false;
     collections[uid]['json'] = false;
@@ -125,6 +127,7 @@ function antlitzninja(config) {
     uid = b64EncodeUnicode(url);
     collections[uid] = [];
     collections[uid]['name'] = "Courtesy National Gallery of Art, Washington";
+    collections[uid]['lic'] = "Public Domain";
     collections[uid]['url'] = url;
     collections[uid]['active'] = false;
     collections[uid]['json'] = false;
@@ -414,17 +417,22 @@ function antlitzninja(config) {
       doc.text(30, c, md['c']); c+=6;
       doc.setFontSize(10);
       doc.setTextColor(127,127,127);
-      doc.textWithLink(collections[faces[fid]['collid']]['name'], 30, c, { url: md['s'] }); c+=6;
+      doc.textWithLink(
+        collections[faces[fid]['collid']]['name'] + ", " +
+        collections[faces[fid]['collid']]['lic'],
+        30, c, { url: md['s'] }
+      ); c+=6;
       doc.textWithLink('IIIF Manifest', 30, c, { url: md['i'] }); c+=4;
       if(md['p']) {
         doc.textWithLink('View on Manducus.net', 30, c, { url: md['p'] }); c+=4;
       }
       doc.setTextColor(0,0,0);
-      c+=12;
+      c+=8;
     }
     // doc.addPage();
+    doc.text(30, c, "Composed Image: CC-BY-SA 4.0");
+    c+=6;
     doc.addImage(data, 'JPEG', 30, c, 120, 120);
-    doc.text(30, c, "CC-BY-SA 4.0")
     doc.save("output.pdf");
     $("#loader").hide();
     $("#splash").hide();
