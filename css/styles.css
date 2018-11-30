@@ -101,6 +101,8 @@ strong {
   height:6vw;
 }
 
+#button_download_image,
+#button_dynamic_manifest,
 #download_button {
   text-decoration: none;
   color:#444;
