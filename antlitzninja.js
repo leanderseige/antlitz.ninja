@@ -87,6 +87,9 @@ function antlitzninja(config) {
 
     load_data();
 
+    eecnt=2;
+    av.ee();
+
   })
 
   antlitzninja.prototype.recalcVH = function() {
