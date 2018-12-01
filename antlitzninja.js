@@ -112,7 +112,7 @@ function antlitzninja(config) {
     collections[uid]['active'] = true;
     collections[uid]['json'] = false;
     collections[uid]['logo'] = "images/staedelmuseum-ed.svg";
-/*
+
     url = "https://iiif.manducus.net/annotations/antlitz_faces_met.json";
     uid = b64EncodeUnicode(url);
     collections[uid] = [];
@@ -132,7 +132,7 @@ function antlitzninja(config) {
     collections[uid]['active'] = false;
     collections[uid]['json'] = false;
     collections[uid]['logo'] = "images/nga.png";
-*/
+
     // LOAD ALL MANIFESTS
     // switched to async by intention
 
