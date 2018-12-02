@@ -88,4 +88,16 @@
     font-size: 2vw;
   }
 
+  .imp_logo {
+      width:60vw;
+  }
+  .imp_award {
+      width:20vw;
+  }
+
+  #impressum p {
+    text-align: center;
+    padding: 2vw;
+  }
+
 }

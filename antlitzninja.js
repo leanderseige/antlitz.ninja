@@ -122,7 +122,7 @@ function antlitzninja(config) {
     collections[uid]['name'] = "The Metropolitan Museum of Art, New York";
     collections[uid]['lic'] = "Public Domain";
     collections[uid]['url'] = url;
-    collections[uid]['active'] = false;
+    collections[uid]['active'] = true;
     collections[uid]['json'] = false;
     collections[uid]['logo'] = "images/met.jpeg";
 
@@ -132,7 +132,7 @@ function antlitzninja(config) {
     collections[uid]['name'] = "Courtesy National Gallery of Art, Washington";
     collections[uid]['lic'] = "Public Domain";
     collections[uid]['url'] = url;
-    collections[uid]['active'] = false;
+    collections[uid]['active'] = true;
     collections[uid]['json'] = false;
     collections[uid]['logo'] = "images/nga.png";
 
@@ -322,16 +322,16 @@ function antlitzninja(config) {
       html = html + '<a href="' + md['p'] + '" target="_blank" ><img class="linkon" src="images/manducus.png" /></a>'
     }
     html = html + '</nobr>';
-    html = html + '<br /><br />';
+    html = html + '<br />';
     return html;
   }
 
   function combine_metadata() {
     var html = "";
     html = html + build_metadisplay(osde["fid"]);
-    html = html + "<hr />";
+    html = html + "<hr /><br />";
     html = html + build_metadisplay(osdn["fid"]);
-    html = html + "<hr />";
+    html = html + "<hr /><br />";
     html = html + build_metadisplay(osdm["fid"]);
     return html;
   }
@@ -754,7 +754,7 @@ function antlitzninja(config) {
 
     }
     html = html + "<span class=\"icons\" style=\"color:black;\" id=\"settingsok\" onclick=\"av.reloadFaces();\">&#xf058;</span>";
-    html = html + "&nbsp;&nbsp;&nbsp;";
+    html = html + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     html = html + "<span class=\"icons\" style=\"color:black;\" onclick=\"av.hideSettings();\">&#xf057;</span>";
 
     $('#settings').html(html);

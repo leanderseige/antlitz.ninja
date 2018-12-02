@@ -50,7 +50,7 @@ body {
 }
 
 .icons {
-  color: #808080;
+  color: #888;
   font-size: 4vw;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -87,7 +87,7 @@ strong {
 }
 
 #bottom {
-  color:#808080;
+  color:#888;
   font-size:4vw;
   padding:0vw;
   grid-column: 1 / span 2;
@@ -150,4 +150,20 @@ strong {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+.imp_logo {
+    width:30vw;
+}
+.imp_award {
+    width:15vw;
+}
+
+#impressum p {
+  text-align: center;
+  padding: 1vw 2vw;
+}
+
+#impressum p a {
+  color:#222;
 }
