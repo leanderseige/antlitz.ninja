@@ -436,7 +436,8 @@ function antlitzninja(config) {
     doc.text(30, c, "Composed Image: CC-BY-SA 4.0");
     c+=6;
     doc.addImage(data, 'JPEG', 30, c, 120, 120);
-    doc.save("output.pdf");
+    var ms = (new Date).getTime();
+    doc.save("antlitz.ninja."+ ms.toString() +".pdf");
     $("#loader").hide();
     $("#splash").hide();
     console.log("finished image");
@@ -499,7 +500,7 @@ function antlitzninja(config) {
     dctx.drawImage(imgm, 0, Math.floor(w * 280 / 400), w, Math.ceil(w * 120 / 400));
 
     var ms = (new Date).getTime();
-    var fn = ms.toString() + ".jpg";
+    var fn = "antlitz.ninja." + ms.toString() + ".jpg";
 
     var data = dcanvas.toDataURL("image/jpeg", 0.98);
 
