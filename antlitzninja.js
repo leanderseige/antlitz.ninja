@@ -604,7 +604,7 @@ function antlitzninja(config) {
 
   function create_UUID(){
       var dt = new Date().getTime();
-      var uuid = 'xxxxxxxx'.replace(/[xy]/g, function(c) {
+      var uuid = 'xxxx'.replace(/[xy]/g, function(c) {
           var r = (dt + Math.random()*16)%16 | 0;
           dt = Math.floor(dt/16);
           return (c=='x' ? r :(r&0x3|0x8)).toString(16);
@@ -618,8 +618,8 @@ function antlitzninja(config) {
     var m = {};
     m['@context'] = "http://iiif.io/api/presentation/2/context.json";
     m['@type'] = "sc:Manifest";
-    m['label'] = "anm";
-    m['@id'] = 'https://antlitz.ninja/uuid/'+id;
+    m['label'] = "";
+    m['@id'] = 'https://'+id;
     var s = [];
     s[0] = {};
     s[0]['@type'] = "sc:Sequence";
@@ -628,11 +628,11 @@ function antlitzninja(config) {
     c[0] = {}
     c[0]['@id'] = m['@id']+'/c/0';
     c[0]['@type'] = "sc:Canvas";
-    c[0]['label'] = "anc";
+    c[0]['label'] = "";
     c[0]['height'] = w;
     c[0]['width'] = w;
     c[0]['thumbnail'] = {};
-    c[0]['thumbnail']['@id'] = osde.id+"/0,0,300,300/full/0/default.jpg";
+    c[0]['thumbnail']['@id'] = "https://antlitz.ninja/images/anth.png";
     var i = [];
     i[0] = {};
     i[0]['@id'] = m['@id']+'/i/0';
