@@ -21,7 +21,9 @@ BEWARE! ANTLITZ.NINJA is a hack, it is not intended to demonstrate exemplary pro
 
 ### Data
 
-* Städel Musem: https://codingdavinci.de/daten/
+* Städel Musem, Frankfurt am Main: https://codingdavinci.de/daten/
+* Metropolitan Museum of Art, New York
+* National Gallery of Art, Washington DC
 
 ### Face Detection
 
