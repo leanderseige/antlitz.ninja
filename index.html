@@ -39,6 +39,13 @@
   <script src="libs/jsonc.min.js"></script>
   <script src="openseadragon/openseadragon.min.js"></script>
   <script src="antlitzninja.js"></script>
+  <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+      if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js');
+      };
+    </script>
 </head>
 
 <body>
