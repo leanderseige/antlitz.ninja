@@ -38,4 +38,4 @@ The folder face_detection/ basic python3 scripts to find faces in IIIF collectio
 
 ### Archetype
 
-ANTLITZ.NINJA was inspired by http://exquisite-iiif-demo.herokuapp.com/portraits 
+ANTLITZ.NINJA was inspired by http://exquisite-iiif-demo.herokuapp.com/portraits / https://github.com/harvardartmuseums/exquisite-iiif-demo
