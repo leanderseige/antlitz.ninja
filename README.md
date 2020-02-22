@@ -35,3 +35,7 @@ The folder face_detection/ basic python3 scripts to find faces in IIIF collectio
 * Avatar, CC0, https://pixabay.com/de/mann-kopf-gesicht-avatar-blau-157699/
 * Ajax Loader GIF, WTFPL, http://www.ajaxload.info/
 * Font Montserrat, OFL, https://fonts.google.com/specimen/Montserrat
+
+### Archetype
+
+ANTLITZ.NINJA was inspired by http://exquisite-iiif-demo.herokuapp.com/portraits 
