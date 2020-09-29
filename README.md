@@ -4,9 +4,9 @@
 
 VISIT [ANTLITZ.NINJA](https://antlitz.ninja) NOW!
 
-ANTLITZ.NINJA was developed for the [Coding da Vinci Hackathon Rhein-Main 2018](https://codingdavinci.de/events/rheinmain/). ANTLITZ.NINJA is a web-based application to create new pieces of art from existing paintings and drawings. ANTLITZ.NINJA is compatible with the International Image Interoperability Framework (IIIF). 
+ANTLITZ.NINJA was developed for the [Coding da Vinci Hackathon Rhein-Main 2018](https://codingdavinci.de/de/events/rhein-main-2018). ANTLITZ.NINJA is a web-based application to create new pieces of art from existing paintings and drawings. ANTLITZ.NINJA is compatible with the International Image Interoperability Framework (IIIF). 
 
-ANTLITZ.NINJA was twice awarded – in the categories most technical and most innovative:
+ANTLITZ.NINJA was twice [awarded](https://codingdavinci.de/de/projekte/antlitzninja) – in the categories most technical and most innovative:
 
 <img src="images/preise-rm-1.png" width="200" />&nbsp;&nbsp;&nbsp;<img src="images/preise-rm-4.png" width="200" />
 
