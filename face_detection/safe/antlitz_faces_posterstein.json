@@ -1,0 +1,79 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://iiif.manducus.net/annotations/antlitzninja_faces_posterstein.json",
+  "@type": "sc:AnnotationList",
+  "resources": [
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0019/37c95109875507ae9e63cf79b097358e480165ae.tif/canvas/0#xywh=2100,2260,670,670",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0019/29c111d6a72133c2bc3f18feb1f72e391e3d1fef/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0019/0449f3da41b181803d6ed6a45a9c0e0aac4fbd46.tif/canvas/0#xywh=1750,2100,700,700",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0019/70c429a40187ace8847e5c6aa6662c9f3f3278d3/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0019/c1039c8a661c0a1c69d82d7b6be1aaed606e241b.tif/canvas/0#xywh=1840,2240,720,720",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0019/9e8e4fa11606a049cecbff0fdc1de2697f17b462/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0019/1bb65fbd468a6b84a30d7da11525b20f70b3eb93.tif/canvas/0#xywh=1540,2210,710,710",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0019/f77842e22b43b3368c671da9c91d654be3589591/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    }
+  ]
+}

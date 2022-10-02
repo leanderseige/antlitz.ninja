@@ -136,6 +136,28 @@ function antlitzninja(config) {
     collections[uid]['json'] = false;
     collections[uid]['logo'] = "images/nga.png";
 
+    url = "https://iiif.manducus.net/annotations/antlitz_faces_mkk.json";
+    // url = "face_detection/antlitz_faces_mkk.json";
+    uid = b64EncodeUnicode(url);
+    collections[uid] = [];
+    collections[uid]['name'] = "Museum für Kunst und Kulturgeschichte Dortmund, CC-BY 4.0";
+    collections[uid]['lic'] = "CC-BY 4.0";
+    collections[uid]['url'] = url;
+    collections[uid]['active'] = true;
+    collections[uid]['json'] = false;
+    collections[uid]['logo'] = "images/mkk.png";
+
+    url = "https://iiif.manducus.net/annotations/antlitz_faces_posterstein.json";
+    // url = "face_detection/antlitz_faces_posterstein.json";
+    uid = b64EncodeUnicode(url);
+    collections[uid] = [];
+    collections[uid]['name'] = "Museum Burg Posterstein, CC-BY 4.0";
+    collections[uid]['lic'] = "CC-BY 4.0";
+    collections[uid]['url'] = url;
+    collections[uid]['active'] = true;
+    collections[uid]['json'] = false;
+    collections[uid]['logo'] = "images/posterstein.jpg";
+
     // LOAD ALL MANIFESTS
     // switched to async by intention
 

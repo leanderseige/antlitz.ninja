@@ -1,0 +1,187 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://iiif.manducus.net/annotations/antlitzninja_faces_mkk.json",
+  "@type": "sc:AnnotationList",
+  "resources": [
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0020/b9f5b24d9738fb7bf87ba4d72e985a130f994b8a.tif/canvas/0#xywh=1350,1580,1260,1260",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0020/07da60955fd665b4a068f4aefd05c1d4faef2f1f/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0020/653b78a2a87dda1509d55d3b4200f0733c57601a.tif/canvas/0#xywh=1560,1060,810,810",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0020/0bf54ceaf42e0bc8ee71a8cc4e4a0967aed1c1d3/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0020/f69d81a8c75c43e91483725ea0050ebb8550d384.tif/canvas/0#xywh=1560,750,850,850",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0020/1faf0802ae0e150086559d2c42e811fa8774573a/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0020/f69d81a8c75c43e91483725ea0050ebb8550d384.tif/canvas/0#xywh=2550,800,830,830",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0020/1faf0802ae0e150086559d2c42e811fa8774573a/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0020/da0eee9874392ec3b8da2521305a4299a45f41e8.tif/canvas/0#xywh=1810,1400,980,980",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0020/3b298ffa093cf0a3c10c5d242035ede8f70c4aeb/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0020/8f0e8475197f2e25a45b03f55a124048624f1cf4.tif/canvas/0#xywh=1140,1390,840,840",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0020/4a33d67f182882338482dbb44178ff606c4a9691/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0020/bc85b796bd62fbcf6aac715b05c43bca41bdbd1b.tif/canvas/0#xywh=1390,810,1370,1370",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0020/4b0cb506353374759fb54ff7178276291c36dd16/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0020/e3d10938e4586b0cf0858637207f29b1741b75a5.tif/canvas/0#xywh=1620,930,1160,1160",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0020/97eb6cceafedda7a9d339ac0600b0bfa8d4b5ce9/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0020/85dc9f895a7dbce8a79bdd5a61ad752d9df72ee0.tif/canvas/0#xywh=1560,920,660,660",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0020/e3c302a57906484736e88eba905e971848a9b37c/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    },
+    {
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "resource": {
+        "@type": "cnt:ContentAsText",
+        "chars": "antlitz face detected"
+      },
+      "on": {
+        "@id": "https://iiif.manducus.net/images/0020/14243062abed65a97a71061806af09158cabbf6e.tif/canvas/0#xywh=1170,690,1050,1050",
+        "within": {
+          "@id": "https://iiif.manducus.net/manifests/0020/ef4d02e674f3791e47d2572825304cd81ca83bb2/manifest.json",
+          "type": [
+            "sc:Manifest"
+          ],
+          "label": "Example Manifest"
+        }
+      }
+    }
+  ]
+}
