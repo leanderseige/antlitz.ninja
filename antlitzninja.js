@@ -192,7 +192,8 @@ function antlitzninja(config) {
         var id = b64EncodeUnicode(mresu['@id']);
         console.log(id);
         manifests[id] = mresu;
-        $('#loader_msg').html(--n + " to go...");
+        // $('#loader_msg').html(--n + " to go...");
+        $('#loader_msg').html(--n + " to go... <br /><br /><a href=\"https://soundcloud.com/antlitzninja\" target=\"_blank\">https://soundcloud.com/antlitzninja</a>");
       }
     }
     $('#loader_msg').html("");
